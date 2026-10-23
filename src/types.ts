@@ -30,6 +30,10 @@ interface KofiBase {
   email: string;
   currency: string;
   kofi_transaction_id: string;
+  /** Set when the supporter linked their Discord account to Ko-fi. */
+  discord_username?: string | null;
+  /** Set when the supporter linked their Discord account to Ko-fi. */
+  discord_userid?: string | null;
 }
 
 export interface KofiDonation extends KofiBase {

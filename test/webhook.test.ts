@@ -17,6 +17,8 @@ const donation = {
   is_subscription_payment: false,
   is_first_subscription_payment: false,
   kofi_transaction_id: 'tx1',
+  discord_username: 'Jo#4105',
+  discord_userid: '012345678901234567',
   shop_items: null,
   tier_name: null,
   shipping: null,
@@ -32,6 +34,7 @@ describe('KofiWebhook', () => {
     await hook.handle(form(donation));
     expect(onDonation).toHaveBeenCalledOnce();
     expect(onDonation.mock.calls[0]![0].from_name).toBe('Jo');
+    expect(onDonation.mock.calls[0]![0].discord_userid).toBe('012345678901234567');
     expect(onEvent).toHaveBeenCalledOnce();
   });
 
