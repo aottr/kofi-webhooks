@@ -1,0 +1,49 @@
+{
+  "name": "kofi-webhooks",
+  "version": "0.1.0",
+  "description": "Typed framework-agnostic receiver for Ko-fi webhooks",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "keywords": [
+    "ko-fi",
+    "kofi",
+    "webhook",
+    "donations",
+    "typescript"
+  ],
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aottr/kofi-webhooks.git"
+  },
+  "homepage": "https://github.com/aottr/kofi-webhooks#readme",
+  "bugs": {
+    "url": "https://github.com/aottr/kofi-webhooks/issues"
+  },
+  "author": "Dustin Kroeger"
+}
